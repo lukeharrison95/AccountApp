@@ -7,7 +7,7 @@ import com.example.demo.util.NumberGenerator;
 @Service
 public class AccountNumberGeneratorService {
 
-	private NumberGenerator numGen;
+	private NumberGenerator numGen;		
 	
 	public AccountNumberGeneratorService(NumberGenerator numGen) {
 		this.numGen = numGen;
