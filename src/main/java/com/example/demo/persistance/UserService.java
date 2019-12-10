@@ -30,12 +30,12 @@ public class UserService {
 		return this.repo.findByFirstName(firstName);
 	}
 	
-	public void updateUser(User user, Long id) {
+	public User updateUser(User user, Long id) {
 		User toUpdate = this.repo.getOne(id);
 		toUpdate.setFirstName(user.getFirstName());
 		toUpdate.setLastName(user.getLastName());
 		toUpdate.setAccNo(user.getAccNo());
-		this.repo.save(toUpdate);
+		return this.repo.save(toUpdate);
 	}
 	
 	public void deleteUser(Long id) {
