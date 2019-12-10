@@ -58,5 +58,11 @@ public class User {
 	public void setAccNo(String accNo) {
 		this.accNo = accNo;
 	}
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", Name= "  + firstName + " " + lastName + "]";
+	}
+
 
 }
