@@ -17,6 +17,8 @@ public class User {
 	
 	private String accNo;
 	
+	private double prize;
+	
 	public User() {
 	}	
 
@@ -57,8 +59,16 @@ public class User {
 
 	public void setAccNo(String accNo) {
 		this.accNo = accNo;
-	}
+	}	
 	
+	public double getPrize() {
+		return prize;
+	}
+
+	public void setPrize(double d) {
+		this.prize = d;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", Name= "  + firstName + " " + lastName + "]";

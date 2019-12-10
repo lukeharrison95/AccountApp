@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.persistance.entities.User;
 import com.example.demo.persistance.repository.UserRepo;
+import com.example.demo.util.PrizeGenerator;
 import com.example.demo.util.exceptions.UserNotFoundException;
 
 @Service
@@ -16,6 +17,7 @@ public class UserService {
 
 	public User createUser(User user) {
 		user.setAccNo(this.numGen.genNumber());
+		user.setPrize(prizeGen.prizeGen(user.getAccNo()));
 		return this.repo.save(user);
 	}
 	
@@ -53,5 +55,8 @@ public class UserService {
 	}
 	@Autowired
 	private AccountNumberGeneratorService numGen;
+	
+	@Autowired
+	private PrizeGenerator prizeGen;
 
 }
