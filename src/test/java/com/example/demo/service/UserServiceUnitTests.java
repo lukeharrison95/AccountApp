@@ -28,7 +28,7 @@ public class UserServiceUnitTests {
 	@Test
 	public void getAllUsersTest() {
 		List<User> users = new ArrayList<>();
-		users.add(new User("John", "Doe", "c8884456"));
+		users.add(new User("John", "Doe"));
 		Mockito.when(repo.findAll()).thenReturn(users);
 		assertTrue("Returned no users", this.service.readUsers().size() > 0);
 

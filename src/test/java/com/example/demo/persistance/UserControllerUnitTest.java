@@ -30,7 +30,7 @@ public class UserControllerUnitTest {
 	@Test
 	public void getAllUsersTest() {
 		List<User> accounts = new ArrayList<>();
-		accounts.add(new User("J", "H", "3"));
+		accounts.add(new User("J", "H"));
 		Mockito
 			.when(repo.findAll())
 			.thenReturn(accounts);
