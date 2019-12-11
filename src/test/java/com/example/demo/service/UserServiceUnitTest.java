@@ -14,24 +14,25 @@ import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.demo.persistance.entities.User;
-import com.example.demo.persistance.repository.UserRepo;
+import com.example.demo.rest.UserController;
+import com.example.demo.service.UserService;
 
 @RunWith(SpringRunner.class)
-public class UserServiceUnitTests {
+public class UserServiceUnitTest {
 
 	@InjectMocks
-	private UserService service;
+	private UserController controller;
 
 	@Mock
-	private UserRepo repo;
+	private UserService service;
 
 	@Test
 	public void getAllUsersTest() {
-		List<User> users = new ArrayList<>();
-		users.add(new User("John", "Doe", "c8884456"));
-		Mockito.when(repo.findAll()).thenReturn(users);
-		assertTrue("Returned no users", this.service.readUsers().size() > 0);
+		List<User> accounts = new ArrayList<>();
+		accounts.add(new User("J", "H"));
+		Mockito.when(service.readUsers()).thenReturn(accounts);
+		assertTrue("Returned no users", this.controller.getAll().size() > 0);
 
-		Mockito.verify(repo, times(1)).findAll();
+		Mockito.verify(service, times(1)).readUsers();
 	}
 }

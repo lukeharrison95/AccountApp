@@ -1,4 +1,3 @@
-  
 package com.example.demo.persistance;
 
 import static org.junit.Assert.assertTrue;
@@ -20,20 +19,18 @@ import com.example.demo.service.UserService;
 
 @RunWith(SpringRunner.class)
 public class UserControllerUnitTest {
-	
+
 	@InjectMocks
 	private UserService service;
-	
+
 	@Mock
 	private UserRepo repo;
-	
+
 	@Test
 	public void getAllUsersTest() {
 		List<User> accounts = new ArrayList<>();
-		accounts.add(new User("J", "H", "3"));
-		Mockito
-			.when(repo.findAll())
-			.thenReturn(accounts);
+		accounts.add(new User("J", "H"));
+		Mockito.when(repo.findAll()).thenReturn(accounts);
 		assertTrue("Returned no users", this.service.readUsers().size() > 0);
 
 		Mockito.verify(repo, times(1)).findAll();
