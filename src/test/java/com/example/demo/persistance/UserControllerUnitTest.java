@@ -1,3 +1,4 @@
+  
 package com.example.demo.persistance;
 
 import static org.junit.Assert.assertTrue;
@@ -13,9 +14,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.demo.persistance.User;
-import com.example.demo.persistance.UserRepo;
-import com.example.demo.persistance.UserService;
+import com.example.demo.persistance.entities.User;
+import com.example.demo.persistance.repository.UserRepo;
+import com.example.demo.service.UserService;
 
 @RunWith(SpringRunner.class)
 public class UserControllerUnitTest {

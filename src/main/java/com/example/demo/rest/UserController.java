@@ -13,41 +13,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.persistance.User;
-import com.example.demo.persistance.UserService;
+import com.example.demo.persistance.entities.User;
+import com.example.demo.service.UserService;
 
 @RestController
 public class UserController {
-	
+
 	private UserService service;
-	
+
 	@Autowired
 	public UserController(UserService service) {
 		super();
 		this.service = service;
 	}
 	
-	@DeleteMapping("deleteUser/{id}")
+	@DeleteMapping("/deleteUser/{id}")
 	public void deleteUser(@PathVariable Long id) {
 		this.service.deleteUser(id);
 	}
-	
 	
 	@PutMapping("/updateUser")
 	public User updateUser(@PathParam("id") Long id, @RequestBody User user) {
 		return this.service.updateUser(user, id);
 	}
-
+	
 	@PostMapping("/createUser")
 	public User createUser(@RequestBody User user) {
 		return this.service.createUser(user);
 	}
-
+	
 	@GetMapping("/getAll")
 	public List<User> getAll() {
 		return this.service.readUsers();
 	}
-
-
-
+	
 }

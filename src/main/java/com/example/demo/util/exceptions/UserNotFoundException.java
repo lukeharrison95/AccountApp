@@ -1,4 +1,4 @@
-package com.example.demo.persistance;
+package com.example.demo.util.exceptions;
 
 public class UserNotFoundException extends RuntimeException {
 
