@@ -22,11 +22,11 @@ public class User {
 	public User() {
 	}	
 
-	public User(String firstName, String lastName, String accNo) {
+	public User(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.accNo = accNo;
+		
 	}
 
 	public long getId() {
